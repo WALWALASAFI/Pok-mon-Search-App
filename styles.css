@@ -16,7 +16,6 @@ body {
 
 .container {
   width: 400px; /* Adjust width as needed */
-  padding: 0px;
   border-radius: 20%;
   border: 2px solid #e7e05a;
   text-align: center;
@@ -80,4 +79,26 @@ img {
   border-radius: 4px;
   border-color: #494804;
   margin-left: 30%;
+}
+
+@media only screen and (max-width: 900px) {
+  body {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 1rem;
+  }
+
+  .container {
+    width: 60%;
+    height: 20%;
+    margin-left: 20%;
+  }
+
+  .btn-styles {
+    width: 10%;
+    height: 5%;
+  }
+
 }
