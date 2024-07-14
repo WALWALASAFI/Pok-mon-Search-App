@@ -17,51 +17,51 @@ const apiUrl = 'https://pokeapi.co/api/v2/pokemon/';
 
 // Function to fetch Pokémon data from API
 async function fetchPokemonData(pokemon) {
-    const response = await fetch(`${apiUrl}${pokemon}`);
-    if (!response.ok) {
-        throw new Error('Pokémon not found');
-    }
-    return response.json();
+  const response = await fetch(`${apiUrl}${pokemon}`);
+  if (!response.ok) {
+    throw new Error('Pokémon not found');
+  }
+  return response.json();
 }
 
 // Function to display Pokémon data
 function displayPokemonData(data) {
-    pokemonName.textContent = data.name.toUpperCase();
-    pokemonId.textContent = `#${data.id}`;
-    weight.textContent = `Weight: ${data.weight}`;
-    height.textContent = `Height: ${data.height}`;
+  pokemonName.textContent = data.name.toUpperCase();
+  pokemonId.textContent = `#${data.id}`;
+  weight.textContent = `Weight: ${data.weight}`;
+  height.textContent = `Height: ${data.height}`;
 
-    // Clear previous types
-    types.innerHTML = '';
+  // Clear previous types
+  types.innerHTML = '';
 
-    // Add types to types element
-    data.types.forEach((type) => {
-        const typeElement = document.createElement('span');
-        typeElement.textContent = type.type.name.toUpperCase();
-        types.appendChild(typeElement);
-    });
+  // Add types to types element
+  data.types.forEach((type) => {
+    const typeElement = document.createElement('span');
+    typeElement.textContent = type.type.name.toUpperCase();
+    types.appendChild(typeElement);
+  });
 
-    hp.textContent = data.stats[0].base_stat;
-    attack.textContent = data.stats[1].base_stat;
-    defense.textContent = data.stats[2].base_stat;
-    specialAttack.textContent = data.stats[3].base_stat;
-    specialDefense.textContent = data.stats[4].base_stat;
-    speed.textContent = data.stats[5].base_stat;
+  hp.textContent = data.stats[0].base_stat;
+  attack.textContent = data.stats[1].base_stat;
+  defense.textContent = data.stats[2].base_stat;
+  specialAttack.textContent = data.stats[3].base_stat;
+  specialDefense.textContent = data.stats[4].base_stat;
+  speed.textContent = data.stats[5].base_stat;
 
-    sprite.src = data.sprites.front_default;
+  sprite.src = data.sprites.front_default;
 }
 
 // Event listener for search button click
 searchButton.addEventListener('click', async () => {
-    const searchTerm = searchInput.value.trim().toLowerCase();
+  const searchTerm = searchInput.value.trim().toLowerCase();
 
-    try {
-        const pokemonData = await fetchPokemonData(searchTerm);
+  try {
+    const pokemonData = await fetchPokemonData(searchTerm);
 
-        // Display Pokémon data on the UI
-        displayPokemonData(pokemonData);
-    } catch (error) {
-        /* eslint-disable no-alert */
-        alert('Pokémon not found. Please check the spelling or try another Pokémon.');
-    }
+    // Display Pokémon data on the UI
+    displayPokemonData(pokemonData);
+  } catch (error) {
+    /* eslint-disable no-alert */
+    alert('Pokémon not found. Please check the spelling or try another Pokémon.');
+  }
 });
