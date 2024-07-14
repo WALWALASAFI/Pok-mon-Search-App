@@ -1,5 +1,5 @@
 # Pok-mon-Search-App
-![image](image/pic of pokemon.jpg)
+![image](<image/pic of pokemon.jpg>)
 
 The Pokémon app search functionality described here allows users to search for Pokémon by name. Here's a detailed description of how the app works and its key features:
 
@@ -13,7 +13,7 @@ Key Features:
 3️⃣ Fetch Pokémon Data:
 4️⃣ Error Handling:
 
-Dimo link✨🔹 (https://walwalasafi.github.io/Cash-register/)
+Dimo link✨🔹 (https://walwalasafi.github.io/Pok-mon-Search-App/)
 
 
 Technologies Used 🛠️
