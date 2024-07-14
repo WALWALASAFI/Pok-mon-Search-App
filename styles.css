@@ -68,7 +68,8 @@ img {
 #pokemon-name {
   font-size: 20px;
   font-weight: bold;
-  color: #efc20e;
+  color: #e7e05a;
+  border-color: black;
 }
 
 #p {
@@ -100,5 +101,4 @@ img {
     width: 10%;
     height: 5%;
   }
-
 }
